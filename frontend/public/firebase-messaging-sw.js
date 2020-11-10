@@ -16,14 +16,14 @@ firebase.initializeApp(config);
 
 // 백그라운드 상태에서 받은 알림 처리
 const messaging = firebase.messaging();
-messaging.setBackgroundMessageHandler(function(payload){
- 
-    const title = "Hello World";
+messaging.setBackgroundMessageHandler(function (payload) {
+
+    const title = "매치온 화이팅!";
     const options = {
-            body: payload.data.status
+        body: payload.data.message
     };
- 
-    return self.registration.showNotification(title,options);
+
+    return self.registration.showNotification(title, options);
 });
 
 // window.addEventListener('beforeinstallprompt', function (event) {
