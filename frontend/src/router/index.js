@@ -9,6 +9,7 @@ import Matching from '../views/Matching.vue'
 import HowToUse from '../views/HowToUse.vue'
 import MatchRoom from '../views/MatchRoom.vue'
 import Chat from '../views/Chat.vue'
+import ChatTest from '../views/ChatTest.vue'
 
 
 Vue.use(VueRouter)
@@ -53,6 +54,11 @@ const routes = [
     path: '/chat',
     name: 'Chat',
     component: Chat
+  },
+  {
+    path: '/chatTest',
+    name: 'ChatTest',
+    component: ChatTest
   },
 ]
 

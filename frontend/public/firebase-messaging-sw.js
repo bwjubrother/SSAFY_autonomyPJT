@@ -1,6 +1,8 @@
-importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js');
-importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js');
+// importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js');
+// importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js');
+// importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js');
+// importScripts('https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js');
+import * as firebase from 'firebase'
 
 const config = {
     apiKey: "AIzaSyDGdHvQgttXEKYkihDzYhpsKc6CPavUlD4",
@@ -14,6 +16,8 @@ const config = {
 };
 
 firebase.initializeApp(config);
+
+firebase.firestore().settings({ timestampsInSnapshots: true })
 
 // 백그라운드 상태에서 받은 알림 처리
 const messaging = firebase.messaging();
