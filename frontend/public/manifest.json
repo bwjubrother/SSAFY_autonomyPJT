@@ -1,6 +1,7 @@
 {
     "name": "MatchOn",
     "short_name": "MatchOn",
+    "description": "한판 붙자!",
     "theme_color": "#4DBA87",
     "icons": [
         {
@@ -27,6 +28,6 @@
         }
     ],
     "start_url": "/",
-    "display": "standalone",
-    "background_color": "#000000"
+    "display": "fullscreen",
+    "background_color": "#B12A34"
 }
