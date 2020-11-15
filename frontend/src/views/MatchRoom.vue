@@ -6,7 +6,14 @@
     <div id="map" style="margin: auto; width: 95%; height: 270px"></div>
 
     <div class="card">
-      <div class="card-body">
+      <v-sheet
+        :class="radius"
+        :max-width="model === 6 ? 128 : 256"
+        class="mx-auto rounded secondary"
+        elevation="12"
+        height="128"
+        width="100%"
+      >
         <p class="text-secondary nomessages" v-if="messages.length == 0">
           [팀원들과 자유롭게 대화하고 방장님은 장소와 시간을 정해주세요!]
         </p>
@@ -14,6 +21,11 @@
           <div v-for="message in messages" :key="message.id">
             <div v-if="message.name == userProfile.username">
               <div class="d-flex justify-end">
+                <v-text-field
+                  solo
+                  label="Append"
+                  append-icon="mdi-map-marker"
+                ></v-text-field>
                 <span>{{ message.message }}</span>
                 <!-- <span class="text-info">:[나] </span> -->
               </div>
@@ -22,14 +34,15 @@
               </div>
             </div>
             <div v-else>
-              <span class="text-info">[{{ message.name }}]: </span>
+              <v-chip class="ma-2" color="primary"> {{ message.name }} </v-chip>
+              <!-- <span class="text-info">[{{ message.name }}]: </span> -->
               <span>{{ message.message }}</span>
               <br />
               <span class="text-secondary time">{{ message.timestamp }}</span>
             </div>
           </div>
         </div>
-      </div>
+      </v-sheet>
       <div class="card-action">
         <CreateMessage :name="userProfile.username" :match_id="match_id" />
       </div>
