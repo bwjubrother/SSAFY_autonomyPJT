@@ -114,10 +114,10 @@
       </v-btn>
     </v-bottom-navigation>
 
-    <!-- <v-card style="max-width: 720px">
+    <v-card style="max-width: 720px">
       <v-btn @click="push1">push</v-btn>
       <p>{{ token2 }}</p>
-      <p>ver 11.15.6</p>
+      <p>ver 11.15.7</p>
     </v-card>
   </v-app>
 </template>
